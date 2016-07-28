@@ -1,0 +1,8 @@
+**/.ensime
+**/.ensime_cache
+**/target
+**/logs
+**/target
+**/tmp
+**/dist
+**/.cache
