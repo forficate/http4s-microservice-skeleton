@@ -1,4 +1,4 @@
-package com.example.mymicroservice.controller
+package com.example.mymicroservice.service
 
 import org.http4s._, org.http4s.dsl._
 
@@ -14,6 +14,6 @@ import org.http4s._, org.http4s.dsl._
  * BlazeBuilder.mountService(HealthCheck(), "/healthcheck")
  * }}}
  */
-object HealthCheck {
+object HealthCheckService {
   def apply() = HttpService.lift { _ => Ok() }
 }

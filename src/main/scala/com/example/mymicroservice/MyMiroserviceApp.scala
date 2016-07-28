@@ -3,19 +3,20 @@ package com.example.mymicroservice
 import org.http4s.server.Server
 import org.http4s.server.ServerApp
 import org.http4s.server.blaze.BlazeBuilder
-import com.example.mymicroservice.controller._
+import com.example.mymicroservice.service._
 import scalaz.concurrent.Task
 
-final case class MyMiroserviceApp(port: Int) {
+final case class MyMicroserviceApp(port: Int) {
 
   def run: Task[Server] =
     BlazeBuilder
       .bindHttp(port = port)
-      .mountService(HealthCheck(), "/healthcheck")
+      .mountService(HealthCheckService(), "/healthcheck")
+      .mountService(NotFoundService())
       .start
 
 }
 
-object MyMiroserviceApp extends ServerApp {
-  override def server(args: List[String]) = MyMiroserviceApp(8080).run
+object MyMicroserviceApp extends ServerApp {
+  override def server(args: List[String]) = MyMicroserviceApp(8080).run
 }
