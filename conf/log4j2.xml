@@ -9,6 +9,9 @@
     </Async>
   </Appenders>
   <Loggers>
+    <Logger name="org.http4s" level="warn">
+      <AppenderRef ref="Async" />
+    </Logger>
     <Root level="info">
       <AppenderRef ref="Async"/>
     </Root>
