@@ -5,12 +5,15 @@ object Dependencies {
   val scalazVersion  = "7.2.4"
   val specs2Version  = "3.8.4"
   val log4J2Version  = "2.6.2"
+  val jacksonVersion = "2.8.1"
   // val monocleVersion = "1.2.0-M1"
 
   val http4sArgonaut    = "org.http4s"                  %% "http4s-argonaut"      % http4sVersion
   val http4sBlazeServer = "org.http4s"                  %% "http4s-blaze-server"  % http4sVersion
   val http4sDsl         = "org.http4s"                  %% "http4s-dsl"           % http4sVersion
-  val log4J2Api        = "org.apache.logging.log4j"     % "log4j-api"             % log4J2Version
+  val jacksonCore       = "com.fasterxml.jackson.core"   % "jackson-core"         % jacksonVersion
+  val jacksonDatabind   = "com.fasterxml.jackson.core"   % "jackson-databind"     % jacksonVersion
+  val log4J2Api         = "org.apache.logging.log4j"     % "log4j-api"            % log4J2Version
   val log4J2Core        = "org.apache.logging.log4j"    % "log4j-core"            % log4J2Version
   val log4J2Slf4J       = "org.apache.logging.log4j"    % "log4j-slf4j-impl"      % log4J2Version
   // val monocleCore       = "com.github.julien-truffaut"  %% "monocle-core"         % monocleVersion

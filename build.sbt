@@ -38,7 +38,7 @@ lazy val commonSettings = scalariformSettings ++ Seq(
   target := baseDirectory.value / "target",
 
   libraryDependencies ++= Seq (
-    log4J2Api
+    log4J2Api /* All subprojects should use log4J2 API */
   ),
 
   ScalariformKeys.preferences := ScalariformKeys.preferences.value
@@ -55,7 +55,9 @@ lazy val root = (project in file("."))
   .settings(mainClass in reStart := Some(main))
   .settings(libraryDependencies ++= Seq(
     log4J2Core,
-    log4J2Slf4J
+    log4J2Slf4J, /* log4j2 bridge to get log messages from libs using slf4j */
+    jacksonCore,
+    jacksonDatabind
   ))
   .dependsOn(web)
   .aggregate(web)
