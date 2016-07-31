@@ -4,16 +4,13 @@
     <Console name="Console" target="SYSTEM_OUT">
       <JSONLayout compact="true" eventEol="true" properties="true"/>
     </Console>
-    <Async name="Async">
-      <AppenderRef ref="Console" />
-    </Async>
   </Appenders>
   <Loggers>
     <Logger name="org.http4s" level="warn">
-      <AppenderRef ref="Async" />
+      <AppenderRef ref="Console" />
     </Logger>
     <Root level="info">
-      <AppenderRef ref="Async"/>
+      <AppenderRef ref="Console"/>
     </Root>
   </Loggers>
 </Configuration>

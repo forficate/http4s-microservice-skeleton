@@ -56,6 +56,7 @@ lazy val root = (project in file("."))
   .settings(Revolver.settings: _*)
   .settings(Seq(assembly, reStart).map(mainClass in _ := Some(mainClass_)))
   .settings(libraryDependencies ++= Seq( /* Logging dependencies */
+    disruptor,
     log4J2Core,
     log4J2Slf4J, /* log4j2 bridge to get log messages from libs using slf4j */
     jacksonCore,
