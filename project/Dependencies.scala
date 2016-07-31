@@ -2,11 +2,10 @@ import sbt._
 
 object Dependencies {
   val http4sVersion  = "0.14.1"
+  val jacksonVersion = "2.8.1"
+  val log4J2Version  = "2.6.2"
   val scalazVersion  = "7.2.4"
   val specs2Version  = "3.8.4"
-  val log4J2Version  = "2.6.2"
-  val jacksonVersion = "2.8.1"
-  // val monocleVersion = "1.2.0-M1"
 
   val http4sArgonaut    = "org.http4s"                  %% "http4s-argonaut"      % http4sVersion
   val http4sBlazeServer = "org.http4s"                  %% "http4s-blaze-server"  % http4sVersion
@@ -16,10 +15,6 @@ object Dependencies {
   val log4J2Api         = "org.apache.logging.log4j"     % "log4j-api"            % log4J2Version
   val log4J2Core        = "org.apache.logging.log4j"    % "log4j-core"            % log4J2Version
   val log4J2Slf4J       = "org.apache.logging.log4j"    % "log4j-slf4j-impl"      % log4J2Version
-  // val monocleCore       = "com.github.julien-truffaut"  %% "monocle-core"         % monocleVersion
-  // val monocleGeneric    = "com.github.julien-truffaut"  %% "monocle-generic"      % monocleVersion
-  // val monocleMacro      = "com.github.julien-truffaut"  %% "monocle-macro"        % monocleVersion
-  // val monocleState      = "com.github.julien-truffaut"  %% "monocle-state"        % monocleVersion
   val scalazConcurrent  = "org.scalaz"                  %% "scalaz-concurrent"    % scalazVersion
   val scalazCore        = "org.scalaz"                  %% "scalaz-core"          % scalazVersion
   val scalazEffect      = "org.scalaz"                  %% "scalaz-effect"        % scalazVersion
