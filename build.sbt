@@ -37,6 +37,10 @@ lazy val commonSettings = scalariformSettings ++ Seq(
   resourceDirectory in Compile := baseDirectory.value / "conf",
   target := baseDirectory.value / "target",
 
+  libraryDependencies ++= Seq (
+    log4J2Api
+  ),
+
   ScalariformKeys.preferences := ScalariformKeys.preferences.value
      .setPreference(AlignSingleLineCaseStatements, true)
      .setPreference(SpacesAroundMultiImports, true)
@@ -47,9 +51,12 @@ lazy val commonSettings = scalariformSettings ++ Seq(
 lazy val root = (project in file("."))
   .settings(commonSettings: _*)
   .settings(Revolver.settings: _*)
-  .settings(cancelable in Global := true) //Prevent CTRL-C exiting to the OS
   .settings(mainClass in assembly := Some(main))
   .settings(mainClass in reStart := Some(main))
+  .settings(libraryDependencies ++= Seq(
+    log4J2Core,
+    log4J2Slf4J
+  ))
   .dependsOn(web)
   .aggregate(web)
 
