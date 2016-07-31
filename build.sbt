@@ -2,12 +2,13 @@ import Dependencies._
 
 import scalariform.formatter.preferences._
 
-val main = "com.example.mymicroservice.MyMicroserviceApp"
+val mainClass_ = "com.example.mymicroservice.MyMicroserviceApp"
 
 lazy val commonSettings = scalariformSettings ++ Seq(
   organization := "com.example",
   version := "0.0.1-SNAPSHOT",
   scalaVersion := "2.11.8",
+
   scalacOptions ++= Seq(
     "-deprecation",
     "-encoding", "UTF-8",
@@ -25,10 +26,12 @@ lazy val commonSettings = scalariformSettings ++ Seq(
     "-Xfuture",
     "-Ywarn-unused-import",
     "-Yrangepos",
-    "-target:jvm-1.8"
+    "-target:jvm-1.8",
+    "-optimise"
   ),
+
   resolvers ++= Seq(
-    "Typesafe repository" at "https://repo.typesafe.com/typesafe/releases/",
+    Resolver.typesafeRepo("releases"),
     "tpolecat" at "http://dl.bintray.com/tpolecat/maven",
     "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
   ),
@@ -51,9 +54,8 @@ lazy val commonSettings = scalariformSettings ++ Seq(
 lazy val root = (project in file("."))
   .settings(commonSettings: _*)
   .settings(Revolver.settings: _*)
-  .settings(mainClass in assembly := Some(main))
-  .settings(mainClass in reStart := Some(main))
-  .settings(libraryDependencies ++= Seq(
+  .settings(Seq(assembly, reStart).map(mainClass in _ := Some(mainClass_)))
+  .settings(libraryDependencies ++= Seq( /* Logging dependencies */
     log4J2Core,
     log4J2Slf4J, /* log4j2 bridge to get log messages from libs using slf4j */
     jacksonCore,

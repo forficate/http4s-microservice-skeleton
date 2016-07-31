@@ -13,8 +13,8 @@ object Dependencies {
   val jacksonCore       = "com.fasterxml.jackson.core"   % "jackson-core"         % jacksonVersion
   val jacksonDatabind   = "com.fasterxml.jackson.core"   % "jackson-databind"     % jacksonVersion
   val log4J2Api         = "org.apache.logging.log4j"     % "log4j-api"            % log4J2Version
-  val log4J2Core        = "org.apache.logging.log4j"    % "log4j-core"            % log4J2Version
-  val log4J2Slf4J       = "org.apache.logging.log4j"    % "log4j-slf4j-impl"      % log4J2Version
+  val log4J2Core        = "org.apache.logging.log4j"     % "log4j-core"           % log4J2Version
+  val log4J2Slf4J       = "org.apache.logging.log4j"     % "log4j-slf4j-impl"     % log4J2Version
   val scalazConcurrent  = "org.scalaz"                  %% "scalaz-concurrent"    % scalazVersion
   val scalazCore        = "org.scalaz"                  %% "scalaz-core"          % scalazVersion
   val scalazEffect      = "org.scalaz"                  %% "scalaz-effect"        % scalazVersion
