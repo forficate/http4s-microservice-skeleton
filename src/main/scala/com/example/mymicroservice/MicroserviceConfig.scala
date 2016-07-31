@@ -14,7 +14,7 @@ object MicroserviceConfig {
   private def port: String \/ Port =
     for {
       envVar <- requiredEnvVar("PORT")
-      port <- \/.fromTryCatchNonFatal(Integer.valueOf(envVar)).leftMap(_ => "PORT is not numeric")
+      port <- \/.fromTryCatchNonFatal(Integer.valueOf(envVar)).leftMap(_ => "Given PORT is not numeric")
     } yield Port(port)
 
   private def requiredEnvVar(envVar: String): String \/ String =
